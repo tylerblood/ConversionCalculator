@@ -27,26 +27,46 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IH3-g9-M1R">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ay9-Wd-8Iu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ay9-Wd-8Iu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="321.5" height="91.5"/>
                                                         <color key="backgroundColor" red="0.86274509803921573" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="°C" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UJA-Z3-FdE">
+                                                        <rect key="frame" x="321.5" y="0.0" width="53.5" height="91.5"/>
+                                                        <color key="backgroundColor" red="0.86274509799999999" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ay9-Wd-8Iu" firstAttribute="width" secondItem="UJA-Z3-FdE" secondAttribute="width" multiplier="6:1" id="Bae-qj-4fV"/>
+                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LbC-L8-pGs">
                                                 <rect key="frame" x="0.0" y="92.5" width="375" height="91.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFH-tU-yFC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFH-tU-yFC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="321.5" height="91.5"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="°F" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g3z-vo-Yvf">
+                                                        <rect key="frame" x="321.5" y="0.0" width="53.5" height="91.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="TFH-tU-yFC" firstAttribute="width" secondItem="g3z-vo-Yvf" secondAttribute="width" multiplier="6:1" id="g9z-0K-hpk"/>
+                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="7T3-F3-kSs">
                                                 <rect key="frame" x="0.0" y="185" width="375" height="91.5"/>
@@ -277,7 +297,9 @@
                     </view>
                     <connections>
                         <outlet property="inputDisplay" destination="TFH-tU-yFC" id="L7J-kv-DtO"/>
+                        <outlet property="inputValue" destination="g3z-vo-Yvf" id="S8A-pm-RSf"/>
                         <outlet property="outputDisplay" destination="ay9-Wd-8Iu" id="maZ-Ae-wmL"/>
+                        <outlet property="outputValue" destination="UJA-Z3-FdE" id="90c-yF-U0A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

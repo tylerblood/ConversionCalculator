@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var outputDisplay: UITextField!
     @IBOutlet weak var inputDisplay: UITextField!
+    @IBOutlet weak var outputValue: UITextField!
+    @IBOutlet weak var inputValue: UITextField!
     @IBAction func btnZero(_ sender: Any) {
         if (checkLength(text: self.inputDisplay.text ?? "")){
             holder = self.inputDisplay.text ?? ""
@@ -102,6 +104,7 @@ class ViewController: UIViewController {
     }
     @IBAction func btnClear(_ sender: Any) {
         self.inputDisplay.text = ""
+        self.outputDisplay.text = ""
     }
     @IBAction func btnSwitch(_ sender: Any) {
         numHolder = (self.inputDisplay.text! as NSString).floatValue
@@ -112,19 +115,39 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: "Choose Converter", message: "", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "fahrenheit to celcius", style: .default, handler: {
             (alertAction) -> Void in
-            // handle Choice A
+            
+            self.outputValue.text = "°C"
+            self.inputValue.text = "°F"
+            self.numHolder = (self.inputDisplay.text! as NSString).floatValue
+            self.numHolder = (self.numHolder - 32)*(5/9)
+            self.outputDisplay.text = "\(self.numHolder)"
         }))
         alert.addAction(UIAlertAction(title: "celcius to fahrenheit", style: .default, handler: {
             (alertAction) -> Void in
-            // handle Choice B
+            
+            self.outputValue.text = "°F"
+            self.inputValue.text = "°C"
+            self.numHolder = (self.inputDisplay.text! as NSString).floatValue
+            self.numHolder = (self.numHolder * (9/5))+32
+            self.outputDisplay.text = "\(self.numHolder)"
         }))
         alert.addAction(UIAlertAction(title: "miles to kilometers", style: .default, handler: {
             (alertAction) -> Void in
-            // handle Choice C
+            
+            self.outputValue.text = "km"
+            self.inputValue.text = "mi"
+            self.numHolder = (self.inputDisplay.text! as NSString).floatValue
+            self.numHolder = (self.numHolder * 1.60934)
+            self.outputDisplay.text = "\(self.numHolder)"
         }))
         alert.addAction(UIAlertAction(title: "kilometers to miles", style: .default, handler: {
             (alertAction) -> Void in
-            // handle Choice D
+            
+            self.outputValue.text = "mi"
+            self.inputValue.text = "km"
+            self.numHolder = (self.inputDisplay.text! as NSString).floatValue
+            self.numHolder = (self.numHolder / 1.609)
+            self.outputDisplay.text = "\(self.numHolder)"
         }))
         self.present(alert, animated: true, completion: nil)
     }
